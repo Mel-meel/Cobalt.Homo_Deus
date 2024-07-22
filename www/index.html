@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibromyalgia Tracker</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Suivi des Douleurs</h1>
+        <form id="painForm">
+            <label for="location">Localisation de la douleur:</label>
+            <select id="location" onchange="updatePainTypes()">
+                <option value="head">Tête</option>
+                <option value="neck">Cou</option>
+                <option value="back">Dos</option>
+                <option value="shoulders">Épaules</option>
+                <option value="arms">Bras</option>
+                <option value="legs">Jambes</option>
+                <option value="feet">Pieds</option>
+                <option value="other">Autre</option>
+            </select>
+
+            <label for="painType">Type de douleur:</label>
+            <select id="painType" onchange="updatePainDescription()">
+                <!-- Les options seront ajoutées dynamiquement -->
+            </select>
+
+            <div id="painDescription"></div>
+
+            <label for="intensity">Intensité de la douleur:</label>
+            <input type="range" id="intensity" name="intensity" min="1" max="10" step="1" value="5">
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" cols="50"></textarea>
+
+            <button type="submit">Enregistrer</button>
+        </form>
+
+        <div id="painLog">
+            <h2>Historique des Douleurs</h2>
+            <ul id="logList"></ul>
+        </div>
+
+        <button id="exportButton">Exporter en CSV</button>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
+
