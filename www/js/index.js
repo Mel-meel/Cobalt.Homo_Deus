@@ -1,6 +1,7 @@
 // js/index.js
-    var logList = document.getElementById('logList');
-    var db;
+var logList = document.getElementById('logList');
+var db;
+var browser = true;
 
     var painDescriptions = {
         pulsatile: "Une douleur qui semble battre avec le rythme du cœur.",
@@ -38,19 +39,27 @@
         other: ["chronique", "aigue"]
     };
 
-    function initDatabase() {
-        db = window.sqlitePlugin.openDatabase({ name: 'fibrotracker.db', location: 'default' });
-        console.log(db);
-        db.transaction(tx => {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS PainLog (id INTEGER PRIMARY KEY AUTOINCREMENT, location TEXT, painType TEXT, intensity INTEGER, description TEXT, timestamp DATETIME)', [], (tx, res) => {
-                console.log(tx);
-                console.log(res);
-                console.log("Table created or already exists");
-            }, (tx, error) => {
-                console.log("Error creating table: " + error.message);
-            });
-        });
+/**
+ * Fonction d'initialisation de la base de données
+ */
+function initDatabase() {
+    if (browser) {
+        db = window.openDatabase('fibrotracker', "0.1", "Fibro Traccker DB", 200000) ;
+    } else {
+        db = window.sqlitePlugin.openDatabase({ name: 'fibrotracker.db', location: 'default' }) ;
     }
+    
+    console.log(db);
+    db.transaction(tx => {
+        tx.executeSql('CREATE TABLE IF NOT EXISTS PainLog (id INTEGER PRIMARY KEY AUTOINCREMENT, location TEXT, painType TEXT, intensity INTEGER, description TEXT, timestamp DATETIME)', [], (tx, res) => {
+            console.log(tx) ;
+            console.log(res) ;
+            console.log("Table created or already exists") ;
+        }, (tx, error) => {
+            console.log("Error creating table: " + error.message) ;
+        }) ;
+    }) ;
+}
 
     function updatePainTypes() {
         const location = document.getElementById('location').value;
@@ -136,6 +145,15 @@
     }
 
 document.addEventListener('DOMContentLoaded', (event_general) => {
+    // Détecte le type d'engin
+    if (document.URL.match(/^https?:/i)) {
+        console.log("Running in a browser...");
+    } else {
+        console.log("Running in an app...");
+        browser = false;
+        document.addEventListener("deviceready", resolve, false);
+    }
+    
     const painForm = document.getElementById('painForm');
     console.log(event_general);
     painForm.addEventListener('submit', (event) => {
