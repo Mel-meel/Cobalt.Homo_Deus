@@ -28,8 +28,14 @@
 
             <div id="painDescription"></div>
 
-            <label for="intensity">Intensité de la douleur:</label>
-            <input type="range" id="intensity" name="intensity" min="1" max="10" step="1" value="5">
+                    <!-- Intensité de la douleur -->
+                    <label for="painIntensity">Intensité de la Douleur (1 à 10) :</label>
+                    <div class="slider-container">
+                        <input type="range" id="painIntensity" name="painIntensity" min="1" max="10" step="1" value="1" oninput="updatePainIntensity(this.value)">
+                        <div class="slider-track"></div>
+                        <div class="slider-fill"></div>
+                    </div>
+                    <div id="painIntensityDisplay">1</div>
 
             <label for="description">Description:</label>
             <textarea id="description" name="description" rows="4" cols="50"></textarea>
@@ -48,4 +54,3 @@
     <script src="js/index.js"></script>
 </body>
 </html>
-

@@ -38,6 +38,26 @@ var browser = true;
         feet: ["osseuse", "neuropathique"],
         other: ["chronique", "aigue"]
     };
+    
+
+function updatePainIntensity(value) {
+    const intensityDisplay = document.getElementById('painIntensityDisplay');
+    const painIntensityInput = document.getElementById('painIntensity');
+    const sliderFill = document.querySelector('.slider-fill');
+
+    // Mettre à jour la valeur affichée
+    intensityDisplay.textContent = value;
+
+    // Calculer le pourcentage pour la largeur de la barre remplie
+    /*const percentage = ((value - 1) * 100) / 9; // Convertir 1-10 en pourcentage
+
+    // Mettre à jour la largeur de la barre remplie
+    sliderFill.style.width = `${percentage}%`;
+
+    // Mettre à jour le fond du curseur
+    painIntensityInput.style.background = `linear-gradient(to right, #00ff00 ${percentage}%, #ff0000 ${percentage}%)`;*/
+}
+
 
 /**
  * Fonction d'initialisation de la base de données

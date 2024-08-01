@@ -49,12 +49,13 @@ select, input[type="range"], textarea, button {
 }
 
 select, textarea {
-    width: 100%;
+    /*width: 100%;*/
 }
 
 input[type="range"] {
     -webkit-appearance: none;
-    background: #007bff;
+    background: lightblue;
+    width: calc(100% - 20px);
     height: 4px;
     border-radius: 4px;
 }
