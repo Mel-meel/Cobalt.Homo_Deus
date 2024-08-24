@@ -1,56 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
+    <meta charset="UTF-8">
     <title>Fibromyalgia Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <script src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
 </head>
 <body>
+    <!-- Sélection de la langue au premier lancement -->
+    <div id="languageSelection" class="modal">
+        <div class="modal-content">
+            <h2 data-i18n="welcomeTitle">Bienvenue dans FibroPain Tracker</h2>
+            <p data-i18n="selectLanguage">Veuillez sélectionner votre langue préférée :</p>
+            <button id="frenchButton">Français</button>
+            <button id="englishButton">English</button>
+        </div>
+    </div>
+    
     <div class="container">
-        <h1>Suivi des Douleurs</h1>
+        <h1 data-i18n="painTrackingTitle">Suivi des Douleurs</h1>
         <form id="painForm">
-            <label for="location">Localisation de la douleur:</label>
+            <label for="location" data-i18n="painLocation">Localisation de la douleur:</label>
             <select id="location" onchange="updatePainTypes()">
-                <option value="head">Tête</option>
-                <option value="neck">Cou</option>
-                <option value="back">Dos</option>
-                <option value="shoulders">Épaules</option>
-                <option value="arms">Bras</option>
-                <option value="legs">Jambes</option>
-                <option value="feet">Pieds</option>
-                <option value="other">Autre</option>
+                <option value="head" data-i18n="locationHead">Tête</option>
+                <option value="neck" data-i18n="locationNeck">Cou</option>
+                <option value="back" data-i18n="locationBack">Dos</option>
+                <option value="shoulders" data-i18n="locationShoulders">Épaules</option>
+                <option value="arms" data-i18n="locationArms">Bras</option>
+                <option value="legs" data-i18n="locationLegs">Jambes</option>
+                <option value="feet" data-i18n="locationFeet">Pieds</option>
+                <option value="other" data-i18n="locationOther">Autre</option>
             </select>
 
-            <label for="painType">Type de douleur:</label>
+            <label for="painType" data-i18n="painType">Type de douleur:</label>
             <select id="painType" onchange="updatePainDescription()">
                 <!-- Les options seront ajoutées dynamiquement -->
             </select>
 
             <div id="painDescription"></div>
 
-                    <!-- Intensité de la douleur -->
-                    <label for="painIntensity">Intensité de la Douleur (1 à 10) :</label>
-                    <div class="slider-container">
-                        <input type="range" id="painIntensity" name="painIntensity" min="1" max="10" step="1" value="1" oninput="updatePainIntensity(this.value)">
-                        <div class="slider-track"></div>
-                        <div class="slider-fill"></div>
-                    </div>
-                    <div id="painIntensityDisplay">1</div>
+            <!-- Intensité de la douleur -->
+            <label for="painIntensity" data-i18n="painIntensityLabel">Intensité de la Douleur (1 à 10) :</label>
+            <div class="slider-container">
+                <input type="range" id="painIntensity" name="painIntensity" min="1" max="10" step="1" value="1" oninput="updatePainIntensity(this.value)">
+                <div class="slider-track"></div>
+                <div class="slider-fill"></div>
+            </div>
+            <div id="painIntensityDisplay">1</div>
 
-            <label for="description">Description:</label>
+            <label for="description" data-i18n="painDescription">Description:</label>
             <textarea id="description" name="description" rows="4" cols="50"></textarea>
 
-            <button type="submit">Enregistrer</button>
+            <button type="submit" data-i18n="saveButton">Enregistrer</button>
         </form>
 
         <div id="painLog">
-            <h2>Historique des Douleurs</h2>
+            <h2 data-i18n="painLogTitle">Historique des Douleurs</h2>
             <ul id="logList"></ul>
         </div>
 
-        <button id="exportButton">Exporter en CSV</button>
+        <button id="exportButton" data-i18n="exportButton">Exporter en CSV</button>
     </div>
 
+    <script src="js/translations.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>

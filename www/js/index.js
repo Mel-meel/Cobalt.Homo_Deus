@@ -41,21 +41,12 @@ var browser = true;
     
 
 function updatePainIntensity(value) {
-    const intensityDisplay = document.getElementById('painIntensityDisplay');
-    const painIntensityInput = document.getElementById('painIntensity');
+    const painIntensityDisplay = document.getElementById('painIntensityDisplay');
     const sliderFill = document.querySelector('.slider-fill');
+    const percentage = (value - 1) / 9 * 100; // 9 = max - min
 
-    // Mettre à jour la valeur affichée
-    intensityDisplay.textContent = value;
-
-    // Calculer le pourcentage pour la largeur de la barre remplie
-    /*const percentage = ((value - 1) * 100) / 9; // Convertir 1-10 en pourcentage
-
-    // Mettre à jour la largeur de la barre remplie
+    painIntensityDisplay.textContent = value;
     sliderFill.style.width = `${percentage}%`;
-
-    // Mettre à jour le fond du curseur
-    painIntensityInput.style.background = `linear-gradient(to right, #00ff00 ${percentage}%, #ff0000 ${percentage}%)`;*/
 }
 
 

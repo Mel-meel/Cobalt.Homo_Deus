@@ -1,0 +1,42 @@
+{
+    "fr": {
+        "welcomeTitle": "Bienvenue dans FibroPain Tracker",
+        "selectLanguage": "Veuillez sélectionner votre langue préférée :",
+        "painTrackingTitle": "Suivi des Douleurs",
+        "painLocation": "Localisation de la douleur:",
+        "locationHead": "Tête",
+        "locationNeck": "Cou",
+        "locationBack": "Dos",
+        "locationShoulders": "Épaules",
+        "locationArms": "Bras",
+        "locationLegs": "Jambes",
+        "locationFeet": "Pieds",
+        "locationOther": "Autre",
+        "painType": "Type de douleur:",
+        "painIntensityLabel": "Intensité de la Douleur (1 à 10) :",
+        "painDescription": "Description:",
+        "saveButton": "Enregistrer",
+        "painLogTitle": "Historique des Douleurs",
+        "exportButton": "Exporter en CSV"
+    },
+    "en": {
+        "welcomeTitle": "Welcome to FibroPain Tracker",
+        "selectLanguage": "Please select your preferred language:",
+        "painTrackingTitle": "Pain Tracking",
+        "painLocation": "Location of Pain:",
+        "locationHead": "Head",
+        "locationNeck": "Neck",
+        "locationBack": "Back",
+        "locationShoulders": "Shoulders",
+        "locationArms": "Arms",
+        "locationLegs": "Legs",
+        "locationFeet": "Feet",
+        "locationOther": "Other",
+        "painType": "Type of Pain:",
+        "painIntensityLabel": "Pain Intensity (1 to 10):",
+        "painDescription": "Description:",
+        "saveButton": "Save",
+        "painLogTitle": "Pain Log",
+        "exportButton": "Export to CSV"
+    }
+}
