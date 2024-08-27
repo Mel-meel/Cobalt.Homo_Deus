@@ -165,6 +165,13 @@ document.addEventListener('DOMContentLoaded', (event_general) => {
         document.addEventListener("deviceready", resolve, false);
     }
     
+    
+    // Initialisation de la base de données et chargement des logs
+    initDatabase();
+    loadPainLogs();
+    // Initialisation de la liste des types de douleurs
+    updatePainTypes();
+    
     const painForm = document.getElementById('painForm');
     console.log(event_general);
     painForm.addEventListener('submit', (event) => {
@@ -181,10 +188,4 @@ document.addEventListener('DOMContentLoaded', (event_general) => {
     });
 
     document.getElementById('exportButton').addEventListener('click', exportToCSV);
-
-    // Initialisation de la base de données et chargement des logs
-    initDatabase();
-    loadPainLogs();
-    // Initialisation de la liste des types de douleurs
-    updatePainTypes();
 });
