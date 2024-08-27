@@ -24,7 +24,7 @@ FibroPain Tracker is a mobile application built using Cordova, designed to assis
    ```
 3. **Navigate to the project directory**:
    ```bash
-   cd fibropain-tracker
+   cd Cobalt.Homo_Deus
    ```
 4. **Add a platform** (e.g., Android or iOS):
    ```bash
@@ -78,7 +78,7 @@ FibroPain Tracker est une application mobile développée avec Cordova, conçue 
    ```
 3. **Naviguer vers le répertoire du projet** :
    ```bash
-   cd fibropain-tracker
+   cd Cobalt.Homo_Deus
    ```
 4. **Ajouter une plateforme** (par exemple, Android ou iOS) :
    ```bash
